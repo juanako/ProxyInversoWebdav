@@ -1,0 +1,14 @@
+version: '3'
+services:
+  webdav:
+    image: bytemark/webdav
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      AUTH_TYPE: Digest
+      USERNAME: frodo
+      PASSWORD: bolson
+      LOCATION: /webdav
+    volumes:
+      - /srv/dav:/var/lib/dav
